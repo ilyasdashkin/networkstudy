@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     remoteAddr->sin_addr.s_addr = inet_addr("82.179.90.12"); //ip
 
     char *buf = new char [256];
-    strcpy(buf, "Can i have the date and time please?\n");
+    strcpy(buf, "This date and time for you\n");
     int msgLen = strlen(buf);
 
     int mySocket = socket(AF_INET, SOCK_STREAM, 0); //tcp
