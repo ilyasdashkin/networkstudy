@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     remoteAddr->sin_addr.s_addr = inet_addr("82.179.90.12"); //ip
 
     char *buf = new char [256];
-    strcpy(buf, "Hello World!!!\n");
+    strcpy(buf, "I am isvinite MikeYuryevich \n");
     int msgLen = strlen(buf);
 
     int mySocket = socket(AF_INET, SOCK_DGRAM, 0); // udp
@@ -50,17 +50,17 @@ int main(int argc, char **argv)
         errHandler("Error send message", 14);
     }
     std::cout << "We send: " << buf << std::endl;
-    
+
     rc = recv(mySocket, buf, 256, 0);
-    if (rc == -1){
+    if (rc == -1) {
         close(mySocket);
         errHandler("Error recevie answer", 15);
     }
     buf[rc]= '\0';
     std::cout<<"We receive: "<< buf << std::endl;
-    
+
     close(mySocket);
-    
+
     delete selfAddr;
     delete remoteAddr;
     delete[] buf;
